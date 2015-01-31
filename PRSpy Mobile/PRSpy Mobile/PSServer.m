@@ -33,9 +33,9 @@
 -(void) splitPlayers:(NSArray*)players
 {
     for(id p in players){
-        if([p objectForKey:@"Team"] == [NSNumber numberWithInt:1]){
+        if([[p objectForKey:@"Team"] isEqualToNumber: [NSNumber numberWithInt:1]]){
             [self.teamOne addObject:p]; }
-        else if([p objectForKey:@"Team"] == [NSNumber numberWithInt:2]){ [self.teamTwo addObject:p]; }
+        else if([[p objectForKey:@"Team"] isEqualToNumber: [NSNumber numberWithInt:2]]){ [self.teamTwo addObject:p]; }
         else{
             NSLog(@"Team other than 1 or 2 found. Team: %@", [p objectForKey:@"Team"]);
         }
