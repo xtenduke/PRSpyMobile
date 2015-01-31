@@ -10,15 +10,35 @@
 
 @implementation PSServer
 
--(id)init:(NSDictionary*)dataDict
+-(id)initWithDict:(NSDictionary*)dataDict
 {
     self = [super init];
     
     if(self){
      
+        self.mapName = [dataDict objectForKey:@"MapName"];
+        self.ipAddress = [dataDict objectForKey:@"IPAddress"];
+        self.country = [dataDict objectForKey:@"Country"];
+        self.serverName = [dataDict objectForKey:@"ServerName"];
+        
+        self.rawPlayers = [dataDict objectForKey:@"Players"];
+        
+        [self splitPlayers:self.rawPlayers];
+        
     }
     
     return self;
+}
+
+-(void) splitPlayers:(NSArray*)players
+{
+    for(id p in players){
+        if([[p objectForKey:@"Team"] isEqualToString:@"1"]){ [self.teamOne addObject:p]; }
+        else if([[p objectForKey:@"Team"] isEqualToString:@"2"]){ [self.teamTwo addObject:p]; }
+        else{
+            NSLog(@"Team other than 1 or 2 found. Team: %@", [p objectForKey:@"Team"]);
+        }
+    }
 }
 
 @end

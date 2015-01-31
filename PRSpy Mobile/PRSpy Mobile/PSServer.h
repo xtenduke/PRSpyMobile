@@ -10,6 +10,15 @@
 
 @interface PSServer : NSObject
 
--(id)init:(NSDictionary*)dataDict;
+-(id)initWithDict:(NSDictionary*)dataDict;
+
+@property(strong, nonatomic) NSString *mapName;
+@property(strong, nonatomic) NSString *ipAddress;
+@property(strong, nonatomic) NSString *country;
+@property(strong, nonatomic) NSString *serverName;
+
+@property(strong, nonatomic) NSArray *rawPlayers;
+@property(strong, nonatomic) NSMutableArray *teamOne;
+@property(strong, nonatomic) NSMutableArray *teamTwo;
 
 @end
