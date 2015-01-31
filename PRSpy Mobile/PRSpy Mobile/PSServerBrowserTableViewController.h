@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSService.h"
 
 @interface PSServerBrowserTableViewController : UITableViewController
 
 @property(strong, nonatomic) NSMutableArray *tableData;
+@property (strong,nonatomic) PSService *service;
+
 
 @end
