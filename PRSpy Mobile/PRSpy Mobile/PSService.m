@@ -41,6 +41,7 @@
         NSLog(@"DL COMPLETE");
         for(id servers in serversArray) {
             NSLog(@"MAP %@",[servers objectForKey:@"MapName"]);
+            
         }
         
     } failure:^(AFHTTPRequestOperation *op, NSError *error) {

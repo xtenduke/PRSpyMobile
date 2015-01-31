@@ -10,4 +10,15 @@
 
 @implementation PSServer
 
+-(id)init:(NSDictionary*)dataDict
+{
+    self = [super init];
+    
+    if(self){
+     
+    }
+    
+    return self;
+}
+
 @end

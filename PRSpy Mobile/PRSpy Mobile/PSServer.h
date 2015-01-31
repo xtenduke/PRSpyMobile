@@ -10,4 +10,6 @@
 
 @interface PSServer : NSObject
 
+-(id)init:(NSDictionary*)dataDict;
+
 @end
