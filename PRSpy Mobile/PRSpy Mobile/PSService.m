@@ -49,11 +49,9 @@
             [serversObjArray addObject:currentServer];
             
             
-            
-            NSLog(@" %@",currentServer.serverName);
         }
         
-        
+        [self.delegate serviceMaintenanceComplete:serversObjArray];
         
         
     } failure:^(AFHTTPRequestOperation *op, NSError *error) {

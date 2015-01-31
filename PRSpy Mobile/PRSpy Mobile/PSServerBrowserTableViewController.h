@@ -10,4 +10,6 @@
 
 @interface PSServerBrowserTableViewController : UITableViewController
 
+@property(strong, nonatomic) NSMutableArray *tableData;
+
 @end

@@ -20,6 +20,8 @@
     
     PSService *service = [[PSService alloc]init];
     [service serviceMaintenanceRequest];
+    
+    [service setDelegate:self];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -115,5 +117,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)serviceMaintenanceComplete:(NSMutableArray*)data
+{
+    self.tableData = data;
+}
 
 @end

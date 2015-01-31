@@ -20,6 +20,6 @@
 
 @protocol PSServiceDelegate
 
-- (void)serviceMaintenanceComplete;
+- (void)serviceMaintenanceComplete:(NSMutableArray*)data;
 
 @end
