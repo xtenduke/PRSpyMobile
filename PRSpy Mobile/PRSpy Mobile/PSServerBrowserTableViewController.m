@@ -8,6 +8,7 @@
 
 #import "PSServerBrowserTableViewController.h"
 #import "PSService.h"
+#import "PSServer.h"
 
 @interface PSServerBrowserTableViewController ()
 
@@ -41,15 +42,22 @@
     return [self.tableData count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *identifier = @"CELL";
+    
+    
+  //  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     // Configure the cell...
+   // if(cell == nil){
+       UITableViewCell  *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+   // }
+    cell.textLabel.text = [(PSServer*)[self.tableData objectAtIndex:indexPath.row]serverName];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
