@@ -10,7 +10,7 @@
 
 @implementation PSServer
 
--(id)initWithDict:(NSDictionary*)dataDict
+-(id) initWithDict:(NSDictionary*)dataDict
 {
     self = [super init];
     
@@ -33,8 +33,9 @@
 -(void) splitPlayers:(NSArray*)players
 {
     for(id p in players){
-        if([[p objectForKey:@"Team"] isEqualToString:@"1"]){ [self.teamOne addObject:p]; }
-        else if([[p objectForKey:@"Team"] isEqualToString:@"2"]){ [self.teamTwo addObject:p]; }
+        if([p objectForKey:@"Team"] == [NSNumber numberWithInt:1]){
+            [self.teamOne addObject:p]; }
+        else if([p objectForKey:@"Team"] == [NSNumber numberWithInt:2]){ [self.teamTwo addObject:p]; }
         else{
             NSLog(@"Team other than 1 or 2 found. Team: %@", [p objectForKey:@"Team"]);
         }
