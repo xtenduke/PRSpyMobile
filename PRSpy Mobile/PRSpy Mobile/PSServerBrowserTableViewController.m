@@ -8,6 +8,7 @@
 
 #import "PSServerBrowserTableViewController.h"
 #import "PSService.h"
+#import "PSServer.h"
 
 @interface PSServerBrowserTableViewController ()
 
@@ -43,10 +44,17 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *identifier = @"CELL";
+    
+    
+  //  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     // Configure the cell...
-    [cell
+   // if(cell == nil){
+       UITableViewCell  *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+   // }
+    cell.textLabel.text = [(PSServer*)[self.tableData objectAtIndex:indexPath.row]serverName];
+    
     return cell;
 }
 
