@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "PSService.h"
+#import "PSBaseViewController.h"
+#import "PSRefineViewController.h"
 
-@interface PSServerBrowserTableViewController : UITableViewController
+@interface PSServerBrowserTableViewController : PSBaseViewController
 
 @property(strong, nonatomic) NSMutableArray *tableData;
-@property (strong,nonatomic) PSService *service;
+@property(strong, nonatomic) NSMutableArray *rawTableData;
 
+@property (strong,nonatomic) PSService *service;
+@property (strong,nonatomic) IBOutlet UITableView *tableView;
+@property (strong,nonatomic) PSRefineViewController *refineView;
+
+@property bool hideEmptyServers;
 
 @end

@@ -22,6 +22,10 @@
 		963A9F331A7C46160078EFA4 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A9F2A1A7C46160078EFA4 /* AFURLSessionManager.m */; };
 		963A9F361A7C46610078EFA4 /* PSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A9F351A7C46610078EFA4 /* PSService.m */; };
 		963A9F3A1A7C4DDB0078EFA4 /* PSServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A9F391A7C4DDB0078EFA4 /* PSServer.m */; };
+		968E768B1A86D63800CB63FF /* PSMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 968E768A1A86D63800CB63FF /* PSMap.m */; };
+		968E768E1A86DA0200CB63FF /* mapoverview_gpm_cq_32.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 968E768D1A86DA0200CB63FF /* mapoverview_gpm_cq_32.jpg */; };
+		968E76931A87039500CB63FF /* PSRefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968E76911A87039500CB63FF /* PSRefineViewController.m */; };
+		968E76941A87039500CB63FF /* PSRefineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968E76921A87039500CB63FF /* PSRefineViewController.xib */; };
 		96E0EEB21A7C2C60003F64D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EEB11A7C2C60003F64D0 /* main.m */; };
 		96E0EEB51A7C2C60003F64D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EEB41A7C2C60003F64D0 /* AppDelegate.m */; };
 		96E0EEB81A7C2C60003F64D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EEB71A7C2C60003F64D0 /* ViewController.m */; };
@@ -29,6 +33,15 @@
 		96E0EEBD1A7C2C60003F64D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E0EEBC1A7C2C60003F64D0 /* Images.xcassets */; };
 		96E0EEC01A7C2C60003F64D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E0EEBE1A7C2C60003F64D0 /* LaunchScreen.xib */; };
 		96E0EECC1A7C2C60003F64D0 /* PRSpy_MobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EECB1A7C2C60003F64D0 /* PRSpy_MobileTests.m */; };
+		96F857FD1A86113B00A41724 /* PSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F857FC1A86113B00A41724 /* PSBaseViewController.m */; };
+		96F858021A8612AF00A41724 /* PSBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F858001A8612AF00A41724 /* PSBrowserCell.m */; };
+		96F858031A8612AF00A41724 /* PSBrowserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F858011A8612AF00A41724 /* PSBrowserCell.xib */; };
+		96F8580A1A8625EB00A41724 /* PSPlayersDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F858081A8625EB00A41724 /* PSPlayersDetailViewController.m */; };
+		96F8580B1A8625EB00A41724 /* PSPlayersDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F858091A8625EB00A41724 /* PSPlayersDetailViewController.xib */; };
+		96F8580F1A8625FF00A41724 /* PSMapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8580D1A8625FF00A41724 /* PSMapDetailViewController.m */; };
+		96F858101A8625FF00A41724 /* PSMapDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F8580E1A8625FF00A41724 /* PSMapDetailViewController.xib */; };
+		96F858141A86261700A41724 /* PSServerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F858121A86261700A41724 /* PSServerDetailViewController.m */; };
+		96F858151A86261700A41724 /* PSServerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F858131A86261700A41724 /* PSServerDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +85,12 @@
 		963A9F351A7C46610078EFA4 /* PSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSService.m; sourceTree = "<group>"; };
 		963A9F381A7C4DDB0078EFA4 /* PSServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSServer.h; sourceTree = "<group>"; };
 		963A9F391A7C4DDB0078EFA4 /* PSServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSServer.m; sourceTree = "<group>"; };
+		968E76891A86D63800CB63FF /* PSMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMap.h; sourceTree = "<group>"; };
+		968E768A1A86D63800CB63FF /* PSMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMap.m; sourceTree = "<group>"; };
+		968E768D1A86DA0200CB63FF /* mapoverview_gpm_cq_32.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mapoverview_gpm_cq_32.jpg; sourceTree = "<group>"; };
+		968E76901A87039500CB63FF /* PSRefineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRefineViewController.h; sourceTree = "<group>"; };
+		968E76911A87039500CB63FF /* PSRefineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRefineViewController.m; sourceTree = "<group>"; };
+		968E76921A87039500CB63FF /* PSRefineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSRefineViewController.xib; sourceTree = "<group>"; };
 		96E0EEAC1A7C2C60003F64D0 /* PRSpy Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PRSpy Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E0EEB01A7C2C60003F64D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E0EEB11A7C2C60003F64D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +104,20 @@
 		96E0EEC51A7C2C60003F64D0 /* PRSpy MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PRSpy MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E0EECA1A7C2C60003F64D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E0EECB1A7C2C60003F64D0 /* PRSpy_MobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRSpy_MobileTests.m; sourceTree = "<group>"; };
+		96F857FB1A86113B00A41724 /* PSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBaseViewController.h; sourceTree = "<group>"; };
+		96F857FC1A86113B00A41724 /* PSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBaseViewController.m; sourceTree = "<group>"; };
+		96F857FF1A8612AF00A41724 /* PSBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBrowserCell.h; sourceTree = "<group>"; };
+		96F858001A8612AF00A41724 /* PSBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBrowserCell.m; sourceTree = "<group>"; };
+		96F858011A8612AF00A41724 /* PSBrowserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSBrowserCell.xib; sourceTree = "<group>"; };
+		96F858071A8625EB00A41724 /* PSPlayersDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPlayersDetailViewController.h; sourceTree = "<group>"; };
+		96F858081A8625EB00A41724 /* PSPlayersDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPlayersDetailViewController.m; sourceTree = "<group>"; };
+		96F858091A8625EB00A41724 /* PSPlayersDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSPlayersDetailViewController.xib; sourceTree = "<group>"; };
+		96F8580C1A8625FF00A41724 /* PSMapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapDetailViewController.h; sourceTree = "<group>"; };
+		96F8580D1A8625FF00A41724 /* PSMapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapDetailViewController.m; sourceTree = "<group>"; };
+		96F8580E1A8625FF00A41724 /* PSMapDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSMapDetailViewController.xib; sourceTree = "<group>"; };
+		96F858111A86261700A41724 /* PSServerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSServerDetailViewController.h; sourceTree = "<group>"; };
+		96F858121A86261700A41724 /* PSServerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSServerDetailViewController.m; sourceTree = "<group>"; };
+		96F858131A86261700A41724 /* PSServerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSServerDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +141,9 @@
 		963A9F061A7C43890078EFA4 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				96F857FE1A86128B00A41724 /* utilViews */,
+				96F857FB1A86113B00A41724 /* PSBaseViewController.h */,
+				96F857FC1A86113B00A41724 /* PSBaseViewController.m */,
 				96E0EEB61A7C2C60003F64D0 /* ViewController.h */,
 				96E0EEB71A7C2C60003F64D0 /* ViewController.m */,
 				96E0EEB91A7C2C60003F64D0 /* Main.storyboard */,
@@ -148,6 +184,7 @@
 		963A9F101A7C45A60078EFA4 /* ServerBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				968E768F1A87037300CB63FF /* refineView */,
 				963A9F121A7C45ED0078EFA4 /* PSServerBrowserTableViewController.h */,
 				963A9F131A7C45ED0078EFA4 /* PSServerBrowserTableViewController.m */,
 				963A9F141A7C45ED0078EFA4 /* PSServerBrowserTableViewController.xib */,
@@ -186,8 +223,28 @@
 			children = (
 				963A9F381A7C4DDB0078EFA4 /* PSServer.h */,
 				963A9F391A7C4DDB0078EFA4 /* PSServer.m */,
+				968E76891A86D63800CB63FF /* PSMap.h */,
+				968E768A1A86D63800CB63FF /* PSMap.m */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		968E768C1A86D9BF00CB63FF /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				968E768D1A86DA0200CB63FF /* mapoverview_gpm_cq_32.jpg */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		968E768F1A87037300CB63FF /* refineView */ = {
+			isa = PBXGroup;
+			children = (
+				968E76901A87039500CB63FF /* PSRefineViewController.h */,
+				968E76911A87039500CB63FF /* PSRefineViewController.m */,
+				968E76921A87039500CB63FF /* PSRefineViewController.xib */,
+			);
+			name = refineView;
 			sourceTree = "<group>";
 		};
 		96E0EEA31A7C2C60003F64D0 = {
@@ -227,6 +284,7 @@
 		96E0EEAF1A7C2C60003F64D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				968E768C1A86D9BF00CB63FF /* assets */,
 				96E0EEB01A7C2C60003F64D0 /* Info.plist */,
 				96E0EEB11A7C2C60003F64D0 /* main.m */,
 			);
@@ -248,6 +306,41 @@
 				96E0EECA1A7C2C60003F64D0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96F857FE1A86128B00A41724 /* utilViews */ = {
+			isa = PBXGroup;
+			children = (
+				96F858061A8625A800A41724 /* PCBrowserDetailViews */,
+				96F858051A8624B800A41724 /* PCBrowserCell */,
+			);
+			name = utilViews;
+			sourceTree = "<group>";
+		};
+		96F858051A8624B800A41724 /* PCBrowserCell */ = {
+			isa = PBXGroup;
+			children = (
+				96F857FF1A8612AF00A41724 /* PSBrowserCell.h */,
+				96F858001A8612AF00A41724 /* PSBrowserCell.m */,
+				96F858011A8612AF00A41724 /* PSBrowserCell.xib */,
+			);
+			name = PCBrowserCell;
+			sourceTree = "<group>";
+		};
+		96F858061A8625A800A41724 /* PCBrowserDetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				96F858071A8625EB00A41724 /* PSPlayersDetailViewController.h */,
+				96F858081A8625EB00A41724 /* PSPlayersDetailViewController.m */,
+				96F858091A8625EB00A41724 /* PSPlayersDetailViewController.xib */,
+				96F8580C1A8625FF00A41724 /* PSMapDetailViewController.h */,
+				96F8580D1A8625FF00A41724 /* PSMapDetailViewController.m */,
+				96F8580E1A8625FF00A41724 /* PSMapDetailViewController.xib */,
+				96F858111A86261700A41724 /* PSServerDetailViewController.h */,
+				96F858121A86261700A41724 /* PSServerDetailViewController.m */,
+				96F858131A86261700A41724 /* PSServerDetailViewController.xib */,
+			);
+			name = PCBrowserDetailViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,11 +424,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F858031A8612AF00A41724 /* PSBrowserCell.xib in Resources */,
+				968E768E1A86DA0200CB63FF /* mapoverview_gpm_cq_32.jpg in Resources */,
+				96F858101A8625FF00A41724 /* PSMapDetailViewController.xib in Resources */,
 				963A9F0D1A7C44060078EFA4 /* PSHomeViewController.xib in Resources */,
+				96F858151A86261700A41724 /* PSServerDetailViewController.xib in Resources */,
 				96E0EEBB1A7C2C60003F64D0 /* Main.storyboard in Resources */,
 				96E0EEC01A7C2C60003F64D0 /* LaunchScreen.xib in Resources */,
+				968E76941A87039500CB63FF /* PSRefineViewController.xib in Resources */,
 				96E0EEBD1A7C2C60003F64D0 /* Images.xcassets in Resources */,
 				963A9F161A7C45ED0078EFA4 /* PSServerBrowserTableViewController.xib in Resources */,
+				96F8580B1A8625EB00A41724 /* PSPlayersDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,17 +453,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				963A9F301A7C46160078EFA4 /* AFURLConnectionOperation.m in Sources */,
+				96F857FD1A86113B00A41724 /* PSBaseViewController.m in Sources */,
 				963A9F2B1A7C46160078EFA4 /* AFHTTPRequestOperation.m in Sources */,
 				963A9F2E1A7C46160078EFA4 /* AFNetworkReachabilityManager.m in Sources */,
+				96F8580A1A8625EB00A41724 /* PSPlayersDetailViewController.m in Sources */,
+				96F858021A8612AF00A41724 /* PSBrowserCell.m in Sources */,
 				963A9F331A7C46160078EFA4 /* AFURLSessionManager.m in Sources */,
 				963A9F311A7C46160078EFA4 /* AFURLRequestSerialization.m in Sources */,
 				963A9F151A7C45ED0078EFA4 /* PSServerBrowserTableViewController.m in Sources */,
+				96F8580F1A8625FF00A41724 /* PSMapDetailViewController.m in Sources */,
 				963A9F361A7C46610078EFA4 /* PSService.m in Sources */,
+				96F858141A86261700A41724 /* PSServerDetailViewController.m in Sources */,
 				963A9F321A7C46160078EFA4 /* AFURLResponseSerialization.m in Sources */,
 				963A9F0C1A7C44060078EFA4 /* PSHomeViewController.m in Sources */,
 				96E0EEB81A7C2C60003F64D0 /* ViewController.m in Sources */,
+				968E76931A87039500CB63FF /* PSRefineViewController.m in Sources */,
 				963A9F2C1A7C46160078EFA4 /* AFHTTPRequestOperationManager.m in Sources */,
 				963A9F2F1A7C46160078EFA4 /* AFSecurityPolicy.m in Sources */,
+				968E768B1A86D63800CB63FF /* PSMap.m in Sources */,
 				96E0EEB51A7C2C60003F64D0 /* AppDelegate.m in Sources */,
 				96E0EEB21A7C2C60003F64D0 /* main.m in Sources */,
 				963A9F2D1A7C46160078EFA4 /* AFHTTPSessionManager.m in Sources */,

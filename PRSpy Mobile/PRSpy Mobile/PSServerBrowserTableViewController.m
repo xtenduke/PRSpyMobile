@@ -6,33 +6,42 @@
 //  Copyright (c) 2015 Jake Laurie. All rights reserved.
 //
 
+#import "PSBrowserCell.h"
 #import "PSServerBrowserTableViewController.h"
 #import "PSService.h"
 #import "PSServer.h"
+#import "AppDelegate.h"
+#import "Config.h"
 
 @interface PSServerBrowserTableViewController ()
 
+
 @end
+
+NSInteger selectedIndex;
+AppDelegate *delegate;
 
 @implementation PSServerBrowserTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
+    delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    selectedIndex = -1;
+    [super viewDidLoad];
+    [self setupNavBar];
     self.service = [[PSService alloc]init];
     [self.service serviceMaintenanceRequest];
-
     [self.service setDelegate:self];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.refineView = [[PSRefineViewController alloc]init];
+    [self.refineView setDelegate:self];
+    [self.refineView.view setFrame:CGRectMake((delegate.window.frame.size.width), ( self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height), self.refineView.view.frame.size.width, self.refineView.view.frame.size.height)];
+    
+    [self.view addSubview:self.refineView.view];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -44,85 +53,109 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"CELL";
+    static NSString *identifier = @"PSBrowserCell";
+    PSBrowserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
+    if(cell == nil)
+    {
+        cell = [[[NSBundle mainBundle] loadNibNamed:identifier owner:nil options:nil] lastObject];
+    }
     
-  //  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    //I MUST BE FIRST
+    cell.currentServer = (PSServer*)[self.tableData objectAtIndex:indexPath.row];
     
-    // Configure the cell...
-   // if(cell == nil){
-       UITableViewCell  *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-   // }
-    cell.textLabel.text = [(PSServer*)[self.tableData objectAtIndex:indexPath.row]serverName];
+    NSString *playersCount  = [NSString stringWithFormat:@" %@/%@",cell.currentServer.numPlayers,cell.currentServer.maxPlayers];
+
+    cell.playerCount.text = playersCount;
+    cell.expanded = NO;
+    cell.serverName.text = cell.currentServer.serverName;
+    cell.mapName.text = cell.currentServer.map.friendlyName;
     
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(selectedIndex == indexPath.row) {
+        return TABLEVIEW_EXPANDED_HEIGHT;
+    }
+    else {
+        return TABLEVIEW_NORMAL_HEIGHT;
+    }
+    
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
     
-    // Pass the selected object to the new view controller.
+    if(selectedIndex == indexPath.row) {
+        //[(PSBrowserCell*)[tableView cellForRowAtIndexPath:indexPath]collapse];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self.tableView reloadData];
     
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+        selectedIndex = -1;
+    } else {
+        selectedIndex = indexPath.row;
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    }
 }
-*/
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)goToSettings {
+    //actually toggle settings
+    
+    if(self.refineView.shown) { //hide
+        self.refineView.shown = NO;
+        [UIView animateWithDuration:0.3f animations:^{
+
+            [self.refineView.view setFrame:CGRectMake((delegate.window.frame.size.width), ( self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height), self.refineView.view.frame.size.width, self.refineView.view.frame.size.height)];
+        }];
+    } else {//show
+        self.refineView.shown = YES;
+        [UIView animateWithDuration:0.3f animations:^{
+            
+            [self.refineView.view setFrame:CGRectMake((delegate.window.frame.size.width -self.refineView.view.frame.size.width), ( self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height), self.refineView.view.frame.size.width, self.refineView.view.frame.size.height)];
+        }];
+    }
+ }
+
+
+#pragma mark RefineDelegateMethods
+- (void)applySettings:(bool)showEmptyServers {
+    self.hideEmptyServers = showEmptyServers;
+    [self runRefinements];
 }
-*/
+
+#pragma mark Servicedelegate method
 
 -(void)serviceMaintenanceComplete:(NSMutableArray*)data
 {
-    self.tableData = data;
-    [self.tableView reloadData];
+    self.rawTableData = data;
+    [self runRefinements];
+}
+
+
+- (void)runRefinements {
+    self.tableData = self.rawTableData;
+    
+    if(self.hideEmptyServers) {
+        
+        NSMutableArray *newArray = [[NSMutableArray alloc]init];
+        
+        for(PSServer *server in self.tableData) {
+            if (![server.numPlayers isEqualToString:@"0"]) {
+                [newArray addObject:server];
+            }
+        }
+        self.tableData = newArray;
+        [self.tableView reloadData];
+    } else {
+        self.tableData = self.rawTableData;
+        [self.tableView reloadData];
+    }
+    
+    
 }
 
 @end

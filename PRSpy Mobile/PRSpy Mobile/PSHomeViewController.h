@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSBaseViewController.h"
 
-@interface PSHomeViewController : UIViewController
+@interface PSHomeViewController : PSBaseViewController
 
 @end

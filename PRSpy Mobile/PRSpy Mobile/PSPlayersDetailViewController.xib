@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PSPlayersDetailViewController">
+            <connections>
+                <outlet property="teamOneTable" destination="OD6-mc-dh4" id="gsa-ql-zxG"/>
+                <outlet property="teamTwoTable" destination="jdz-ot-B3t" id="ecs-MT-G2S"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="26" sectionHeaderHeight="22" sectionFooterHeight="22" id="OD6-mc-dh4">
+                    <rect key="frame" x="0.0" y="0.0" width="161" height="477"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="gW6-yW-uFE"/>
+                        <outlet property="delegate" destination="-1" id="fhV-Ym-QsA"/>
+                    </connections>
+                </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nfW-LH-6Hv">
+                    <rect key="frame" x="159" y="0.0" width="2" height="477"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="26" sectionHeaderHeight="22" sectionFooterHeight="22" id="jdz-ot-B3t">
+                    <rect key="frame" x="159" y="0.0" width="161" height="477"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="CFv-YZ-zO2"/>
+                        <outlet property="delegate" destination="-1" id="MIe-VD-DSC"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="317" y="177.5"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

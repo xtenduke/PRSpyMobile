@@ -16,14 +16,24 @@
     
     if(self){
      
-        self.mapName = [dataDict objectForKey:@"MapName"];
+        self.map = [[PSMap alloc]initWithName:[dataDict objectForKey:@"MapName"]];
+        self.map.teamOneName = [dataDict objectForKey:@"Team1Name"];
+        self.map.teamTwoName = [dataDict objectForKey:@"Team2Name"];
+    
         self.ipAddress = [dataDict objectForKey:@"IPAddress"];
         self.country = [dataDict objectForKey:@"Country"];
         self.serverName = [dataDict objectForKey:@"ServerName"];
-        
         self.rawPlayers = [dataDict objectForKey:@"Players"];
+        self.numPlayers = [[dataDict objectForKey:@"NumPlayers"]stringValue];
+        self.maxPlayers = [[dataDict objectForKey:@"MaxPlayers"]stringValue];
+        self.serverText = [dataDict objectForKey:@"ServerText"];
         
+        self.teamOne = [[NSMutableArray alloc]init];
+        self.teamTwo = [[NSMutableArray alloc]init];
         [self splitPlayers:self.rawPlayers];
+
+        
+        [self trimName];
         
     }
     
@@ -41,5 +51,10 @@
         }
     }
 }
+
+- (void)trimName {
+    self.serverName = [self.serverName substringFromIndex:13];
+}
+
 
 @end
